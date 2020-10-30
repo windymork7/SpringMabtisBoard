@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+<mapper namespace="kr.co.DAO.BoardIDao">
+	
+	<!-- 게시판 갯수 -->
+	<select id="getListCount" resultType="int">
+		SELECT COUNT(*) FROM BOARD	
+	</select>
+	
+	<!-- 게시판 목록 -->
+	<!-- <select id="getBoardList" resultType="kr.co.DTO.BoardDTO">
+		SELECT * FROM (SELECT ROWNUM RNUM,BOARD_NUM,BOARD_NAME,BOARD_SUBJECT, BOARD_CONTENT,BOARD_FILE,BOARD_RE_REF,BOARD_RE_LEV, BOARD_RE_SEQ,BOARD_READCOUNT,BOARD_DATE FROM (SELECT * FROM BOARD ORDER BY BOARD_RE_REF DESC,BOARD_RE_SEQ ASC)) WHERE RNUM>= #{param1} AND RNUM <= #{param2}	
+	</select> -->
+
+</mapper>

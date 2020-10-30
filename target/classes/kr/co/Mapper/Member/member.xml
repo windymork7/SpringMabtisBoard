@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="kr.co.DAO.MemberIDao">
+
+	<!-- 로그인 체크 -->
+	<select id="login" resultType="String">
+		SELECT USERPW FROM MEMBERINFORMATION WHERE USERID = #{param1}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="JoinProcess" parameterType="kr.co.DTO.MemberDTO">
+		INSERT INTO MEMBERINFORMATION VALUES
+		(#{userId}, #{userPw}, #{userMail}, #{userName}, #{postalCode}, #{roadAddress}, #{branchAddress}, #{subAddress}, #{jubun1}, #{jubun2}, #{hobby}, #{intro})
+	</insert>
+	
+	<!-- 회원 목록 -->
+	<select id="memberLookup" resultType="String">
+		SELECT * FROM MEMBERINFORMATION	
+	</select>
+	
+	<!-- 회원 삭제 -->
+	<delete id="memberDelete">
+		DELETE FROM MEMBERINFORMATION WHERE USERID = #{param1}
+	</delete>
+	
+	<!-- 회원 정보 -->
+	<select id="memberInfo" resultType="kr.co.DTO.MemberDTO">
+		SELECT * FROM MEMBERINFORMATION WHERE USERID = #{param1}
+	</select>
+
+</mapper>
+    
