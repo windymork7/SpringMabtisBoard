@@ -10,5 +10,7 @@ public interface BoardIDao
 	public List<BoardDTO> getBoardList(int page,int limit);
 	// 게시판 갯수
 	public int getListCount();
+	// 게시판 글쓰기
+	public void boardInsert(BoardDTO boardDTO);
 	
 }

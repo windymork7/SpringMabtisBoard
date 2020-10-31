@@ -13,7 +13,7 @@
 </head>
 <body>
 <!-- 게시판 등록 -->
-<form action="./BoardAddAction.bo" method="post" name="boardform">
+<form action="./BoardAddAction.bo" method="post" name="boardform" enctype="multipart/form-data">
 <table cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">
 		<td colspan="5">MVC 게시판</td>
@@ -58,7 +58,7 @@
 			<div align="center">파일 첨부</div>
 		</td>
 		<td>
-			<input name="BOARD_FILE" type="file"/>
+			<input name="BOARD_FILE2" type="file"/>
 		</td>
 	</tr>
 	<tr bgcolor="cccccc">

@@ -10,9 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import kr.co.DAO.BoardIDao;
-import kr.co.DAO.MemberIDao;
 import kr.co.DTO.BoardDTO;
-import kr.co.DTO.MemberDTO;
 import kr.co.Service.Board.IBoardListService;
 
 @Service
@@ -24,6 +22,7 @@ public class BoardListService implements IBoardListService
 	@Override
 	public List<BoardDTO> getBoardList(HttpServletRequest request, Model model)
 	{
+		
 		BoardIDao dao = sqlSession.getMapper(BoardIDao.class);
 		
 		int page=1;

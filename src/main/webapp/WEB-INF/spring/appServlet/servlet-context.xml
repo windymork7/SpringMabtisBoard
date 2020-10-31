@@ -32,7 +32,7 @@
 	
 	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <beans:property name="dataSource" ref="dataSource"></beans:property>
-        <beans:property name="mapperLocations" value="classpath:kr/co/mapper/Member/*.xml"></beans:property>
+        <beans:property name="mapperLocations" value="classpath:kr/co/Mapper/**/*.xml"></beans:property>
     </beans:bean>
    
     <beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
@@ -54,5 +54,15 @@
  	
  	<!-- 게시판 조회 -->
     <beans:bean id="BoardListService" class="kr.co.ServiceClass.Board.BoardListService"/>
- 	
+	<!-- 게시판 등록 -->
+    <beans:bean id="BoardInsertService" class="kr.co.ServiceClass.Board.BoardInsertService"/>
+
+
+
+	<!-- MultipartResolver 설정 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="300000000" />
+		<beans:property name="maxInMemorySize" value="300000000" />
+	</beans:bean>
+
 </beans:beans>
