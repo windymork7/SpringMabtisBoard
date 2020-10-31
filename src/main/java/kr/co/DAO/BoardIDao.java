@@ -12,5 +12,10 @@ public interface BoardIDao
 	public int getListCount();
 	// 게시판 글쓰기
 	public void boardInsert(BoardDTO boardDTO);
+	// 게시글 열기
+	public BoardDTO getDetail(int num);
+	// 게시글 삭제
+	public void boardDelete(int num);
+	
 	
 }

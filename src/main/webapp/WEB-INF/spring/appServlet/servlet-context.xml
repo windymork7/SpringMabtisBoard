@@ -56,6 +56,10 @@
     <beans:bean id="BoardListService" class="kr.co.ServiceClass.Board.BoardListService"/>
 	<!-- 게시판 등록 -->
     <beans:bean id="BoardInsertService" class="kr.co.ServiceClass.Board.BoardInsertService"/>
+	<!-- 게시글 열기 -->
+    <beans:bean id="BoardDetailService" class="kr.co.ServiceClass.Board.BoardDetailService"/>
+	<!-- 게시글 삭제 -->
+    <beans:bean id="BoardDeleteService" class="kr.co.ServiceClass.Board.BoardDeleteService"/>
 
 
 

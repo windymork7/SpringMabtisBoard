@@ -1,10 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
-<%
-	int num=Integer.parseInt(request.getParameter("num"));
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<title>MVC °Ô½ÃÆÇ</title>
+<title>MVC ê²Œì‹œíŒ</title>
 </head>
 <body>
 <form name="deleteForm" action="./BoardDeleteAction.bo?num=${num }" 
@@ -12,7 +11,7 @@
 <table border=1>
 <tr>
 	<td>
-		<font size=2>±Û ºñ¹Ð¹øÈ£ : </font>
+		<font size=2>ê¸€ ë¹„ë°€ë²ˆí˜¸ : </font>
 	</td>
 	<td>
 		<input name="BOARD_PASS" type="password">
@@ -20,9 +19,9 @@
 </tr>
 <tr>
 	<td colspan=2 align=center>
-		<a href="javascript:deleteForm.submit()">»èÁ¦</a>
+		<a href="javascript:deleteForm.submit()">ì‚­ì œ</a>
 		&nbsp;&nbsp;
-		<a href="javascript:history.go(-1)">µ¹¾Æ°¡±â</a>
+		<a href="javascript:history.go(-1)">ëŒì•„ê°€ê¸°</a>
 	</td>
 </tr>
 </table>
