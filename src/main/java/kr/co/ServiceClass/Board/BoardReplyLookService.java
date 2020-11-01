@@ -8,26 +8,22 @@ import org.springframework.stereotype.Service;
 
 import kr.co.DAO.BoardIDao;
 import kr.co.DTO.BoardDTO;
-import kr.co.Service.Board.IBoardDeleteService;
+import kr.co.Service.Board.IBoardReplyLookService;
 
 @Service
-public class BoardDeleteService implements IBoardDeleteService
+public class BoardReplyLookService implements IBoardReplyLookService
 {
 	@Autowired
 	SqlSession sqlSession;
 	
 	@Override
-	public void delete(HttpServletRequest request)
+	public BoardDTO replyLook(HttpServletRequest request)
 	{
 		BoardIDao dao = sqlSession.getMapper(BoardIDao.class);
-
-		int num = Integer.parseInt(request.getParameter("num"));
-		String pass = request.getParameter("BOARD_PASS");
 		
-		BoardDTO boardDTO = dao.getDetail(num);
+		BoardDTO boardDTO = dao.getDetail(Integer.parseInt(request.getParameter("num")));
 		
-		if (boardDTO.getBOARD_PASS().equals(pass))
-			dao.boardDelete(num);
+		return boardDTO;
 		
 	}
 

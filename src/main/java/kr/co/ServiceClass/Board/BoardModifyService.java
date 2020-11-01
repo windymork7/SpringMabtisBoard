@@ -1,33 +1,28 @@
 package kr.co.ServiceClass.Board;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.DAO.BoardIDao;
 import kr.co.DTO.BoardDTO;
-import kr.co.Service.Board.IBoardDetailService;
+import kr.co.Service.Board.IBoardModifyService;
 
 @Service
-public class BoardDetailService implements IBoardDetailService
+public class BoardModifyService implements IBoardModifyService
 {
 	@Autowired
 	SqlSession sqlSession;
 
 	@Override
-	public BoardDTO boardDetail(HttpServletRequest request)
+	public void boardModify(BoardDTO boardDTO)
 	{
 		BoardIDao dao = sqlSession.getMapper(BoardIDao.class);
 		
-		int num = Integer.parseInt(request.getParameter("num"));
+		BoardDTO boardDB = dao.getDetail(boardDTO.getBOARD_NUM());
 		
-		dao.setReadCountUpdate(num);
-		BoardDTO boardDTO = dao.getDetail(num);
-		
-		
-		return boardDTO;
+		if (boardDTO.getBOARD_PASS().equals(boardDB.getBOARD_PASS()))
+			dao.boardModify(boardDTO);
 	}
 
 }

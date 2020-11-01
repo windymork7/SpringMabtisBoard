@@ -33,5 +33,20 @@
 	<delete id="boardDelete">
 		DELETE FROM BOARD WHERE BOARD_NUM = #{BOARD_NUM}
 	</delete>
+	
+	<!-- 게시글 수정 -->
+	<update id="boardModify" parameterType="kr.co.DTO.BoardDTO">
+		UPDATE BOARD SET BOARD_SUBJECT=#{BOARD_SUBJECT},BOARD_CONTENT=#{BOARD_CONTENT} WHERE BOARD_NUM=#{BOARD_NUM}
+	</update>
+	
+	<!-- 게시글 부분 수정 -->
+	<update id="boardLittleModify">
+		UPDATE BOARD SET BOARD_RE_SEQ=BOARD_RE_SEQ+1 WHERE BOARD_RE_REF=#{param1} AND BOARD_RE_SEQ > #{param2}
+	</update>
+	
+	<!-- 조회수  -->
+	<update id="setReadCountUpdate">
+		UPDATE BOARD SET BOARD_READCOUNT = BOARD_READCOUNT+1 WHERE BOARD_NUM = #{param1}
+	</update>
 
 </mapper>

@@ -60,6 +60,14 @@
     <beans:bean id="BoardDetailService" class="kr.co.ServiceClass.Board.BoardDetailService"/>
 	<!-- 게시글 삭제 -->
     <beans:bean id="BoardDeleteService" class="kr.co.ServiceClass.Board.BoardDeleteService"/>
+    <!-- 게시글 수정 조회 -->
+    <beans:bean id="BoardModifyLookService" class="kr.co.ServiceClass.Board.BoardModifyLookService"/>
+    <!-- 게시글 수정 -->
+    <beans:bean id="BoardModifyService" class="kr.co.ServiceClass.Board.BoardModifyService"/>
+	<!-- 답변 조회 -->
+    <beans:bean id="BoardReplyLookService" class="kr.co.ServiceClass.Board.BoardReplyLookService"/>
+    <!-- 답변 -->
+    <beans:bean id="BoardReplyService" class="kr.co.ServiceClass.Board.BoardReplyService"/>
 
 
 
